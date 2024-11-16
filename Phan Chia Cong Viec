@@ -1,0 +1,4 @@
+Phạm Qúy Nam: giao diện client, thông kê tỷ lệ thể loại sách
+Nguyễn Đình Quảng: phần back-end tạo các API để phía font-end call, thống kê tổng số hóa đơn
+Phạm Công Trúc:quản lí giỏ hàng, thống kê tổng số lượng sách
+Ngụy Văn Quyết: dịch vụ thêm sách và hiển thị danh sách sách bên Admin, thống kê tổng số user
