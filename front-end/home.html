@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Home</title>
+</head>
+
+<body>
+    <h1 class="heading"> Book Management </h1>
+    <button onclick="goBack()">Back</button>
+    <div class="container">
+        <form action="#">
+            <label for="fname">Book name</label>
+            <input type="text" id="fname" name="name" placeholder="Book name..." required>
+
+            <label for="lname">Page Count</label>
+            <input type="text" id="lname" name="page-count" placeholder="Page count..." required>
+
+            <label for="author">Author</label>
+            <input type="text" id="author" name="author" placeholder="Author name..." required>
+
+            <label for="category">Category</label>
+            <input type="text" id="category" name="category" placeholder="Category name..." required>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    
+    <table id="book-block">
+    </table>
+    
+    <script src="./callAPI.js"></script>
+    <script>
+        function goBack() {
+            window.history.back(); // Quay lại trang trước đó
+        }
+    </script>
+</body>
+
+</html>
