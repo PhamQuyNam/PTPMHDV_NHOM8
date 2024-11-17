@@ -281,7 +281,7 @@ async function loadCategory() {
     }
 }
 
-// Hàm xử lý form tạo sách
+
 function handleCreateForm() {
     const createBookForm = document.getElementById("create-book-form");
     createBookForm.addEventListener("submit", async (event) => {
