@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Tables / General - NiceAdmin Bootstrap Template</title>
+  <title>Forms / Elements - NiceAdmin Bootstrap Template</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -281,32 +281,38 @@
         </a>
       </li><!-- End Dashboard Nav -->
 
+
       <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
+        <a class="nav-link " data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
           <i class="bi bi-journal-text"></i><span>Forms</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
-        <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+        <ul id="forms-nav" class="nav-content collapse show" data-bs-parent="#sidebar-nav">
           <li>
             <a href="forms-elements.html">
-              <i class="bi bi-circle"></i><span>Form Nhập sách</span>
+              <i class="bi bi-circle"></i><span>Form Nhập Sách</span>
+            </a>
+          </li>
+          <li>
+            <a href="forms-edit.html" class="active">
+              <i class="bi bi-circle"></i><span>Form sửa sách</span>
             </a>
           </li>
         </ul>
       </li><!-- End Forms Nav -->
 
       <li class="nav-item">
-        <a class="nav-link " data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
+        <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
           <i class="bi bi-layout-text-window-reverse"></i><span>Tables</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
-        <ul id="tables-nav" class="nav-content collapse show" data-bs-parent="#sidebar-nav">
+        <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="tables-general.html" class="active">
-              <i class="bi bi-circle"></i><span>Danh sách sách theo thể loại</span>
+            <a href="tables-general.html">
+              <i class="bi bi-circle"></i><span>General Tables</span>
             </a>
           </li>
           <li>
             <a href="tables-data.html">
-              <i class="bi bi-circle"></i><span>Danh sách tất cả sách</span>
+              <i class="bi bi-circle"></i><span>Data Tables</span>
             </a>
           </li>
         </ul>
@@ -335,7 +341,6 @@
         </ul>
       </li><!-- End Charts Nav -->
 
-
       <li class="nav-heading">Admin</li>
 
       <li class="nav-item">
@@ -357,136 +362,75 @@
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>General Tables</h1>
+      <h1>Form sửa sách</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-          <li class="breadcrumb-item">Tables</li>
-          <li class="breadcrumb-item active">General</li>
+          <li class="breadcrumb-item">Forms</li>
+          <li class="breadcrumb-item active">Sửa thông tin sách</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
-    
+
     <section class="section">
       <div class="row">
-        <!-- Bảng cho thể loại 1 -->
-        <div class="col-lg-6">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Thể loại 1</h5>
-              <table class="table" id="category-1-table">
-                <thead>
-                  <tr>
-                    <th scope="col">STT</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Page Count</th>
-                    <th scope="col">Author Name</th>
-                    <th scope="col">Category name</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <!-- Dữ liệu sẽ được thêm vào đây từ JavaScript -->
-                </tbody>
-              </table>
-            </div>
+          <div class="col-lg-12">
+  
+              <div class="card">
+                  <div class="card-body">
+                      <h5 class="card-title">Sửa các thông tin của sách</h5>
+  
+                      <!-- Sửa các thông tin của sách -->
+                      <form id="book-form">
+                          <div class="row mb-3">
+                              <label for="bookid" class="col-sm-2 col-form-label">Nhập id sách cần sửa</label>
+                              <div class="col-sm-10">
+                                  <input type="text" id="bookid" class="form-control" required>
+                              </div>
+                          </div>
+                          <div class="row mb-3">
+                              <label for="bookName" class="col-sm-2 col-form-label">Tên sách</label>
+                              <div class="col-sm-10">
+                                  <input type="text" id="bookName" class="form-control" required>
+                              </div>
+                          </div>
+                          <div class="row mb-3">
+                              <label for="pageCount" class="col-sm-2 col-form-label">Số trang sách</label>
+                              <div class="col-sm-10">
+                                  <input type="number" id="pageCount" class="form-control" required>
+                              </div>
+                          </div>
+                          <div class="row mb-3">
+                              <label for="authorId" class="col-sm-2 col-form-label">ID tác giả</label>
+                              <div class="col-sm-10">
+                                  <input type="number" id="authorId" class="form-control" required>
+                              </div>
+                          </div>
+                          <div class="row mb-3">
+                              <label for="categoryId" class="col-sm-2 col-form-label">Thể loại</label>
+                              <div class="col-sm-10">
+                                  <input type="number" id="categoryId" class="form-control" required>
+                              </div>
+                          </div>
+                          <div class="row mb-3">
+                              <label for="bookCover" class="col-sm-2 col-form-label">Bìa sách</label>
+                              <div class="col-sm-10">
+                                  <input type="file" id="bookCover" class="form-control">
+                              </div>
+                          </div>
+                          <div class="row mb-3">
+                              <label class="col-sm-2 col-form-label">Submit Button</label>
+                              <div class="col-sm-10">
+                                <button id="cap_nhat" type="button" class="btn btn-primary">Cập nhật thông tin</button>
+                              </div>
+                          </div>
+                      </form>
+                  </div>
+              </div>
           </div>
-        </div>
-    
-        <!-- Bảng cho thể loại 2 -->
-        <div class="col-lg-6">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Thể loại 2</h5>
-              <table class="table" id="category-2-table">
-                <thead>
-                  <tr>
-                    <th scope="col">STT</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Page Count</th>
-                    <th scope="col">Author Name</th>
-                    <th scope="col">Category name</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <!-- Dữ liệu sẽ được thêm vào đây từ JavaScript -->
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-    
-        <!-- Bảng cho thể loại 3 -->
-        <div class="col-lg-6">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Thể loại 3</h5>
-              <table class="table" id="category-3-table">
-                <thead>
-                  <tr>
-                    <th scope="col">STT</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Page Count</th>
-                    <th scope="col">Author Name</th>
-                    <th scope="col">Category name</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <!-- Dữ liệu sẽ được thêm vào đây từ JavaScript -->
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-    
-        <!-- Bảng cho thể loại 4 -->
-        <div class="col-lg-6">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Thể loại 4</h5>
-              <table class="table" id="category-4-table">
-                <thead>
-                  <tr>
-                    <th scope="col">STT</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Page Count</th>
-                    <th scope="col">Author Name</th>
-                    <th scope="col">Category name</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <!-- Dữ liệu sẽ được thêm vào đây từ JavaScript -->
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-    
-        <!-- Bảng cho thể loại 5 -->
-        <div class="col-lg-6">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Thể loại 5</h5>
-              <table class="table" id="category-5-table">
-                <thead>
-                  <tr>
-                    <th scope="col">STT</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Page Count</th>
-                    <th scope="col">Author Name</th>
-                    <th scope="col">Category name</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <!-- Dữ liệu sẽ được thêm vào đây từ JavaScript -->
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-    
       </div>
-    </section>
-    
+  </section>
+
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
@@ -516,7 +460,7 @@
   <script src="assets/vendor/php-email-form/validate.js"></script>
 
   <!-- Template Main JS File -->
-  <script src="assets/js/table.js"></script>
+  <script src="assets/js/edit_book.js"></script>
 
 </body>
 
