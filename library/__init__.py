@@ -4,6 +4,7 @@ from .Cart.controller import cart
 from .image.controller import images
 from library.User.controller import user_bp
 from library.Hoa_Don.controller import hoa_don_bp
+from library.Quantri.controller import quan_tri_bp
 from .extension import db, ma
 from .model import User, Books, Author, Category,Cart,Img
 import os
@@ -31,4 +32,5 @@ def create_app(config_file="config.py"):
     app.register_blueprint(images)
     app.register_blueprint(user_bp)
     app.register_blueprint(hoa_don_bp)
+    app.register_blueprint(quan_tri_bp)
     return app

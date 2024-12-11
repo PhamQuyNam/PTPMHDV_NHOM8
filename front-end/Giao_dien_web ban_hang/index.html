@@ -76,8 +76,15 @@
                             <li><a class="dropdown-item" href="#!">New Arrivals</a></li>
                         </ul>
                     </li>
+                    <div class="search-bar" style="margin-top: 7px;">
+                        <form class="search-form d-flex align-items-center" method="POST" action="#">
+                          <input type="text" name="query" placeholder="Search" title="Enter search keyword">
+                          <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+                        </form>
+                      </div>
                 </ul>
                 <!-- Nút giỏ hàng -->
+                 
                 <form class="d-flex">
                     <button class="btn btn-outline-dark" type="button" data-bs-toggle="modal"
                         data-bs-target="#cartModal">
@@ -86,6 +93,12 @@
                         <span class="badge bg-dark text-white ms-1 rounded-pill" id="cart-count">0</span>
                     </button>
                 </form>
+                <div class="user_profile">
+                    <a class="nav-link nav-profile d-flex align-items-center pe-0" href="/web_ban_sach/front-end/Giao_dien_web ban_hang/Userprofile/users-profile.html">
+                        <!-- <img src="img/slide/1.png" style="width: 5%;" alt="Profile" class="rounded-circle"> -->
+                        <span class="d-none d-md-block dropdown-toggle ps-2">USER</span>
+                    </a>
+                </div>                
     <!-- Modal hiển thị giỏ hàng -->
                 <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-lg">

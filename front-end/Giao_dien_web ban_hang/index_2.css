@@ -9,7 +9,6 @@
     justify-content: center; /* Căn giữa theo chiều ngang */
     align-items: center; /* Căn giữa theo chiều dọc */
 }
-
 .book_img {
     max-width: 100%; /* Đảm bảo ảnh không vượt quá kích thước của phần tử cha */
     height: auto; /* Giữ tỷ lệ khung hình của ảnh */
