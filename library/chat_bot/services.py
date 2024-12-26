@@ -20,7 +20,7 @@ from prophet import Prophet
 
 def du_bao_7ngay():
     # Đọc file CSV
-    duong_dan_file = r"C:\Users\QUANGHONEY\Desktop\Code\Data\du_lieu_hoa_don.csv"  # Đường dẫn file dữ liệu
+    duong_dan_file = r"C:\Users\Acer\Desktop\HDV\web_ban_sach\TEST_CHATBOT\du_lieu_hoa_don.csv"  # Đường dẫn file dữ liệu
     du_lieu = pd.read_csv(duong_dan_file)
 
     # Tiền xử lý dữ liệu
@@ -57,7 +57,7 @@ def du_bao_7ngay():
 
 def du_bao_3thang():
     # Đọc file CSV
-    duong_dan_file = r"C:\Users\QUANGHONEY\Desktop\Code\Data\du_lieu_hoa_don.csv"  # Đường dẫn file dữ liệu
+    duong_dan_file = r"C:\Users\Acer\Desktop\HDV\web_ban_sach\TEST_CHATBOT\du_lieu_hoa_don.csv"  # Đường dẫn file dữ liệu
     du_lieu = pd.read_csv(duong_dan_file)
 
     # Tiền xử lý dữ liệu
@@ -94,7 +94,7 @@ def du_bao_3thang():
 
 def du_bao_1nam():
     # Đọc file CSV
-    duong_dan_file = r"C:\Users\QUANGHONEY\Desktop\Code\Data\du_lieu_hoa_don.csv"  # Đường dẫn file dữ liệu
+    duong_dan_file = r"C:\Users\Acer\Desktop\HDV\web_ban_sach\TEST_CHATBOT\du_lieu_hoa_don.csv"  # Đường dẫn file dữ liệu
     du_lieu = pd.read_csv(duong_dan_file)
 
     # Tiền xử lý dữ liệu
@@ -131,7 +131,7 @@ def du_bao_1nam():
 
 def du_bao_1nam_theo_thang():
     # Đọc file CSV
-    duong_dan_file = r"C:\Users\QUANGHONEY\Desktop\Code\Data\du_lieu_hoa_don.csv"  # Đường dẫn file dữ liệu
+    duong_dan_file = r"C:\Users\Acer\Desktop\HDV\web_ban_sach\TEST_CHATBOT\du_lieu_hoa_don.csv"  # Đường dẫn file dữ liệu
     du_lieu = pd.read_csv(duong_dan_file)
 
     # Tiền xử lý dữ liệu
@@ -182,7 +182,7 @@ def du_bao_1nam_theo_thang():
 #Doanh thu
 def du_bao_doanh_thu_7ngay():
     # Đọc file CSV
-    duong_dan_file = r"C:\Users\QUANGHONEY\Desktop\Code\Data\du_lieu_hoa_don.csv"  # Đường dẫn file dữ liệu
+    duong_dan_file = r"C:\Users\Acer\Desktop\HDV\web_ban_sach\TEST_CHATBOT\du_lieu_hoa_don.csv"  # Đường dẫn file dữ liệu
     du_lieu = pd.read_csv(duong_dan_file)
 
     # Tiền xử lý dữ liệu
@@ -219,7 +219,7 @@ def du_bao_doanh_thu_7ngay():
 
 def du_bao__doanh_thu_1nam_theo_thang():
     # Đọc file CSV
-    duong_dan_file = r"C:\Users\QUANGHONEY\Desktop\Code\Data\du_lieu_hoa_don.csv"  # Đường dẫn file dữ liệu
+    duong_dan_file = r"C:\Users\Acer\Desktop\HDV\web_ban_sach\TEST_CHATBOT\du_lieu_hoa_don.csv"  # Đường dẫn file dữ liệu
     du_lieu = pd.read_csv(duong_dan_file)
 
     # Tiền xử lý dữ liệu
@@ -270,7 +270,7 @@ def du_bao__doanh_thu_1nam_theo_thang():
 
 def du_bao_doanh_thu_1nam():
     # Đọc file CSV
-    duong_dan_file = r"C:\Users\QUANGHONEY\Desktop\Code\Data\du_lieu_hoa_don.csv"  # Đường dẫn file dữ liệu
+    duong_dan_file = r"C:\Users\Acer\Desktop\HDV\web_ban_sach\TEST_CHATBOT\du_lieu_hoa_don.csv"  # Đường dẫn file dữ liệu
     du_lieu = pd.read_csv(duong_dan_file)
 
     # Tiền xử lý dữ liệu

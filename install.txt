@@ -1,0 +1,7 @@
+pip install flask-jwt-extended marshmallow-sqlalchemy
+pip install transformers
+pip install pandas
+pip install prophet
+pip install flask
+pip install transformers tensorflow flask_cors
+
