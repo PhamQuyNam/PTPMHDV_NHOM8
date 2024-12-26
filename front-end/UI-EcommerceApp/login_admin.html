@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./styles/login.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="title-container">
+        <h1>Shop Nhóm 8</h1>
+        <p>THẾ GIỚI TRI THỨC ĐƯỜNG DẪN TƯƠNG LAI</p>
+        <button><a href="./login.html">Login as User</a></button>
+      </div>
+
+      <div class="form-container">
+        <form id="loginForm">
+          <h1>Chào mừng admin</h1>
+          <span>Mời bạn nhập tài khoản </span>
+          <input type="text" id="username" placeholder="Name" required />
+          <input type="password" id="password" placeholder="Password" required />
+          <span><i class="fas fa-exclamation-triangle"></i> Lưu ý tài khoản admin là mặc định đừng để lộ mật khẩu</span>
+          <p>
+            DON'T HAVE AN ACCOUNT ? <a href="./register.html">REGISTER NOW</a>
+          </p>
+          <button type="submit">Login</button>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      // Xử lý sự kiện đăng nhập
+      document.getElementById("loginForm").addEventListener("submit", async function (e) {
+        e.preventDefault(); // Ngăn form tự động reload trang
+
+        // Lấy dữ liệu từ form
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+
+        // Kiểm tra dữ liệu đầu vào
+        if (!username || !password) {
+          alert("Please enter both Name and Password.");
+          return;
+        }
+
+        try {
+          // Gửi yêu cầu POST tới API để lấy token
+          const response = await fetch("http://127.0.0.1:5000/login", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ username: username, password: password }),
+          });
+
+          if (response.ok) {
+            const data = await response.json();
+            const token = data.access_token;
+
+            // Lưu token vào localStorage
+            localStorage.setItem("adminToken", token);
+
+            alert("Login successful! Token saved in localStorage.");
+
+            // Chuyển hướng đến trang index
+            window.location.href = "http://127.0.0.1:5501/front-end/NiceAdmin/index.html"; // Đường dẫn đến trang index
+          } else {
+            const errorData = await response.json();
+            alert(errorData.msg || "Login failed. Please try again.");
+          }
+        } catch (error) {
+          console.error("Error during login:", error);
+          alert("An error occurred. Please try again later.");
+        }
+      });
+    </script>
+  </body>
+</html>

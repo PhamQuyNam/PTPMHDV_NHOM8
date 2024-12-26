@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Nhập</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        form {
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        input {
+            margin: 10px 0;
+            padding: 10px;
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+    <form id="loginForm">
+        <h2>Đăng Nhập</h2>
+        <input type="text" placeholder="Name" required>
+        <input type="password" placeholder="Password" required>
+        <button type="submit">Đăng Nhập</button>
+    </form>
+
+    <script>
+        // Xử lý sự kiện đăng nhập
+        document.getElementById("loginForm").addEventListener("submit", async function (e) {
+            e.preventDefault(); // Ngăn form tự động reload trang
+
+            // Lấy dữ liệu từ form
+            const username = document.querySelector('input[placeholder="Name"]').value;
+            const password = document.querySelector('input[placeholder="Password"]').value;
+
+            // Kiểm tra dữ liệu đầu vào
+            if (!username || !password) {
+                alert("Please enter both Name and Password.");
+                return;
+            }
+
+            try {
+                // Gửi yêu cầu POST tới API để lấy token
+                const response = await fetch("http://127.0.0.1:5000/login", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({ username: username, password: password }),
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    const token = data.access_token;
+
+                    // Lưu token vào localStorage
+                    localStorage.setItem("adminToken", token);
+
+                    alert("Login successful! Token saved in localStorage.");
+
+                    // Chuyển hướng đến trang index
+                    window.location.href = "./index.html"; // Đường dẫn đến trang index
+                } else {
+                    const errorData = await response.json();
+                    alert(errorData.msg || "Login failed. Please try again.");
+                }
+            } catch (error) {
+                console.error("Error during login:", error);
+                alert("An error occurred. Please try again later.");
+            }
+        });
+    </script>
+
+</body>
+</html>
